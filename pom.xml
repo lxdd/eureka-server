@@ -68,8 +68,6 @@
 	</dependencies>
 
 	<build>
-		<!-- 变更输出路径 -->
-		<directory>output</directory>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -77,30 +75,6 @@
 				<configuration>
 					<fork>true</fork><!-- 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<!-- <outputDirectory>${project.build.directory}/output</outputDirectory> -->
-							<outputDirectory>output</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/resources/dist</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
-						</configuration>
-
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 
